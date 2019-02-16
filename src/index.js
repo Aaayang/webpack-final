@@ -1,4 +1,4 @@
-fetch('/user').then(res => {
+fetch('/api/user').then(res => {
     return res.json();
 }).then(data => {
     console.log(data);
@@ -11,6 +11,10 @@ fetch('/user').then(res => {
 // };
 // xhr.send();
 
-// if(module.hot) {
-//     module.hot.accept();
-// }
+if(DEV === 'dev') {
+    console.log('hello world');
+}
+
+if(module.hot) {
+    module.hot.accept();
+}

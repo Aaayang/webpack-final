@@ -22,7 +22,6 @@ const htmlPlugin = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-    mode: 'development',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -48,7 +47,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json', '.css']
     },
     devtool: "cheap-module-eval-source-map",
-    watch: true,
+    // watch: true,
     watchOptions: {
         ignored: /node_modules/,
         // 每秒向文件询问的次数
