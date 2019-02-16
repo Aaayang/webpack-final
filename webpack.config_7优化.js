@@ -25,13 +25,10 @@ const htmlPlugin = new HtmlWebpackPlugin({
 
 module.exports = {
     mode: 'development',
-    entry: {
-        index: './src/index.js',
-        other: './src/other.js'
-    },
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
+        filename: 'main.[hash:8].js',
         // 在引用资源（例如CSS、Img）的时候会统一加上这个前缀
         // publicPath: 'http://www.zhihur.com'
     },
@@ -63,7 +60,6 @@ module.exports = {
     },
     plugins: [
         htmlPlugin,
-        new webpack.NamedModulesPlugin(), // 打印哪个模块更新了
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css'
@@ -99,8 +95,7 @@ module.exports = {
                         plugins: [
                             ['@babel/plugin-proposal-decorators', {legacy: true}],
                             ['@babel/plugin-proposal-class-properties',{loose: true}],
-                            ['@babel/plugin-transform-runtime'],
-                            '@babel/plugin-syntax-dynamic-import'
+                            ['@babel/plugin-transform-runtime']
                         ]
                     }
                 }
@@ -171,23 +166,7 @@ module.exports = {
                 sourceMap: true // ES5 到 ES6 的映射方便调试
             }),
             new OptimizeCssAssetsWebpackPlugin()
-        ],
-        splitChunks: {
-            cacheGroups: {
-                common: {
-                    chunks: 'initial',
-                    minChunks: 2,
-                    minSize: 0, // 有1个字符重了就拿出来
-                },
-                vendor: {
-                    test: /node_modules/, // 只有第三方的我要
-                    chunks: 'initial',
-                    minChunks: 2,
-                    minSize: 0,
-                    priority: 10 // 权重，先走这里
-                }
-            }
-        }
+        ]
     },
     externals: {
         jquery: '$'

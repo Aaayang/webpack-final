@@ -63,7 +63,6 @@ module.exports = {
     },
     plugins: [
         htmlPlugin,
-        new webpack.NamedModulesPlugin(), // 打印哪个模块更新了
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css'
@@ -99,8 +98,7 @@ module.exports = {
                         plugins: [
                             ['@babel/plugin-proposal-decorators', {legacy: true}],
                             ['@babel/plugin-proposal-class-properties',{loose: true}],
-                            ['@babel/plugin-transform-runtime'],
-                            '@babel/plugin-syntax-dynamic-import'
+                            ['@babel/plugin-transform-runtime']
                         ]
                     }
                 }
