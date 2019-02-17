@@ -1,8 +1,8 @@
-fetch('/api/user').then(res => {
-    return res.json();
-}).then(data => {
-    console.log(data);
-});
+// fetch('/api/user').then(res => {
+//     return res.json();
+// }).then(data => {
+//     console.log(data);
+// });
 
 // let xhr = new XMLHttpRequest();
 // xhr.open('GET', '/api/user', true);
@@ -56,8 +56,27 @@ btn.addEventListener('click', function() {
 });
 document.body.appendChild(btn); */
 
-import './source.js';
+// import './source.js';
 
-if(module.hot) {
-    module.hot.accept();
+// -! 不会让文件再去通过 pre + normal loader 来处理了
+// ! 没有 normal
+// !! 什么都不要，只要 inline-loader 来处理
+// let str = require('!!inline-loader!./a.js');
+// console.log(1111111);
+
+
+
+class Test {
+    constructor() {
+        this.name = 'xxx';
+    }
+    getName() {
+        return this.name;
+    }
 }
+let n = new Test();
+console.log(n.getName());
+
+// if(module.hot) {
+//     module.hot.accept();
+// }
