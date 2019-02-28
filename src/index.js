@@ -1,2 +1,11 @@
-let str = require('!!inline-loader!./a.js');
+class Person {
+    constructor() {
+        this.name = 'xxx';
+    }
+    getName() {
+        console.log(this.name);
+    }
+}
 
+let x = new Person();
+x.getName();

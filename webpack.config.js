@@ -10,27 +10,19 @@ module.exports = {
     resolveLoader: {
         modules: ['node_modules', path.resolve(__dirname, 'loaders')]
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {
                 test: /\.js$/,
                 use: {
-                    loader: 'loader1'
-                },
-                enforce: 'pre'
-            },
-            {
-                test: /\.js$/,
-                use: {
-                    loader: 'loader2'
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env'
+                        ]
+                    }
                 }
-            },
-            {
-                test: /\.js$/,
-                use: {
-                    loader: 'loader3'
-                },
-                enforce: 'post'
             }
         ]
     }

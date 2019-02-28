@@ -152,6 +152,8 @@ pitch 阶段：pitch 的 loader3 -> pitch 的 loader2 -> pitch 的 loader1 -> �
 
 ## 实现 babel-loader
 
+loader-utils：可以拿到 webpack.config.js 中传递的参数
+
 
 
 
