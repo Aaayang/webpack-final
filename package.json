@@ -1,0 +1,12 @@
+{
+  "name": "webpack-final",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Aaayang/webpack-final.git",
+  "author": "Aaayang <iamajser@163.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}
