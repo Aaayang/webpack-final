@@ -11,16 +11,16 @@ module.exports = {
         modules: ['node_modules', path.resolve(__dirname, 'loaders')]
     },
     devtool: 'source-map',
+    watch: true,
     module: {
         rules: [
             {
                 test: /\.js$/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: 'banner-loader', // 注释的 loader
                     options: {
-                        presets: [
-                            '@babel/preset-env'
-                        ]
+                        text: 'Aaayang',
+                        filename: path.resolve(__dirname, 'banner.js')
                     }
                 }
             }
