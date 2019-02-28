@@ -56,6 +56,7 @@
     "loader-utils": "^1.2.3",
     "moment": "^2.24.0",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "tapable": "^1.1.1"
   }
 }
